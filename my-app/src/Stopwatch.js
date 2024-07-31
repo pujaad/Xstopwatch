@@ -29,12 +29,12 @@ const StopWatch=()=>{
     const formatTime=()=>{
         const minutes= Math.floor(time/60);
         const seconds= time%60;
-        return  `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`
     }
     return (
         <center>
         <h1>Stopwatch</h1>
-        <p>{formatTime()}</p>
+        <p>Time: {formatTime()}</p>
         {!timerOn?(
         <button onClick={()=>handleStart()}>Start</button>
         ):(
